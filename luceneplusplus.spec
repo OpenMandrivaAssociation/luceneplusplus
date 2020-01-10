@@ -81,7 +81,7 @@ This package contains the development ifles and headers for %{name}.
 
 %prep
 %setup -qn %{oname}-rel_%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %ifarch %ix86
