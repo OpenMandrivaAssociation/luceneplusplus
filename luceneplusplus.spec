@@ -16,7 +16,7 @@
 Summary:	C++ port of the popular Java Lucene library
 Name:		lucene++
 Version:	3.0.7
-Release:	6
+Release:	7
 License:	LGPLv3+ and ASL2.0
 Group:		Development/C++
 Url:		https://github.com/luceneplusplus/LucenePlusPlus
@@ -90,8 +90,8 @@ export CXX=g++
 %endif
 
 %cmake -DCMAKE_CXX_FLAGS="-DBOOST_VARIANT_USE_RELAXED_GET_BY_DEFAULT=1"
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
