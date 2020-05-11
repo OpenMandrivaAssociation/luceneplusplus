@@ -81,10 +81,10 @@ This package contains the development ifles and headers for %{name}.
 %autopatch -p1
 
 %build
-%ifarch %ix86
-export CC=gcc
-export CXX=g++
-%endif
+#ifarch %ix86
+#export CC=gcc
+#export CXX=g++
+#endif
 
 %cmake -DCMAKE_CXX_FLAGS="-DBOOST_VARIANT_USE_RELAXED_GET_BY_DEFAULT=1"
 %make_build
