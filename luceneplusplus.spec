@@ -1,5 +1,6 @@
 %ifarch %{ix86} %{arm}
 %define _disable_ld_no_undefined 1
+%define _disable_lto 1
 %endif
 
 %define oname LucenePlusPlus
