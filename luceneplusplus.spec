@@ -1,8 +1,6 @@
-# Source from GitHub
-#
-# git clone https://github.com/luceneplusplus/LucenePlusPlus.git
-# cd LucenePlusPlus
-# git archive --format=tar --prefix=LucenePlusPlus-20140729/ master | xz > ../LucenePlusPlus-20140729.tar.xz
+%ifarch %{ix86} %{arm}
+%define _disable_ld_no_undefined 1
+%endif
 
 %define oname LucenePlusPlus
 
@@ -10,8 +8,6 @@
 %define libname %mklibname %{name} %{major}
 %define libcontrib %mklibname %{name}-contrib %{major}
 %define devname %mklibname %{name} -d
-
-%define gitdate 20140729
 
 Summary:	C++ port of the popular Java Lucene library
 Name:		lucene++
