@@ -18,7 +18,7 @@ License:	LGPLv3+ and ASL2.0
 Group:		Development/C++
 Url:		https://github.com/luceneplusplus/LucenePlusPlus
 Source0:	https://github.com/luceneplusplus/LucenePlusPlus/archive/rel_%{version}/LucenePlusPlus-rel_%{version}.tar.gz
-Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
+#Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
 BuildRequires:	cmake
 BuildRequires:	boost-devel
 
