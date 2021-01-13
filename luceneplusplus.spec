@@ -21,7 +21,11 @@ Source0:	https://github.com/luceneplusplus/LucenePlusPlus/archive/rel_%{version}
 #Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
 BuildRequires:	cmake
 BuildRequires:	boost-devel
+BuildRequires:  lzma-devel
 BuildRequires:  pkgconfig(zlib)
+BuildRequires:  pkgconfig(icu-uc)
+BuildRequires:  pkgconfig(libzstd)
+BuildRequires:  pkgconfig(bzip2)
 
 %description
 Lucene++ is an up to date C++ port of the popular Java Lucene library,
