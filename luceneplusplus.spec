@@ -91,8 +91,8 @@ This package contains the development ifles and headers for %{name}.
 #export CXX=g++
 #endif
 
-%cmake -DCMAKE_CXX_FLAGS="-DBOOST_VARIANT_USE_RELAXED_GET_BY_DEFAULT=1"
-%make_build
+%cmake -DINSTALL_GTEST=OFF
+%make_build lucene++ lucene++-contrib
 
 %install
 %make_install -C build
