@@ -58,8 +58,8 @@ a high-performance, full-featured text search engine.
 
 %files -n %{libcontrib}
 %doc *.license README* AUTHORS
-%{_libdir}/lib%{name}-contrib.so.%{major}
-%{_libdir}/lib%{name}-contrib.so.%{version}
+#{_libdir}/lib%{name}-contrib.so.%{major}
+#{_libdir}/lib%{name}-contrib.so.%{version}
 
 #----------------------------------------------------------------------------
 
