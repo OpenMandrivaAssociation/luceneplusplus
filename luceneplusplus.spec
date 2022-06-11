@@ -76,7 +76,7 @@ This package contains the development ifles and headers for %{name}.
 %files -n %{devname}
 %doc *.license README* AUTHORS REQUESTS
 %{_includedir}/%{name}/
-%{_libdir}/pkgconfig/lib%{name}*.pc
+#{_libdir}/pkgconfig/lib%{name}*.pc
 %{_libdir}/lib%{name}*.so
 
 #----------------------------------------------------------------------------
