@@ -91,7 +91,9 @@ This package contains the development ifles and headers for %{name}.
 #export CXX=g++
 #endif
 
-%cmake -DINSTALL_GTEST=OFF
+%cmake  \
+        -DINSTALL_GTEST=OFF \
+        -DENABLE_TEST=OFF
 %make_build lucene++ lucene++-contrib
 
 %install
