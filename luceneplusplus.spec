@@ -19,6 +19,10 @@ Group:		Development/C++
 Url:		https://github.com/luceneplusplus/LucenePlusPlus
 Source0:	https://github.com/luceneplusplus/LucenePlusPlus/archive/rel_%{version}/LucenePlusPlus-rel_%{version}.tar.gz
 #Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
+Patch0:         lucene++-3.0.8-fix-contrib-soname.patch
+Patch1:         lucene++-3.0.8-fix-pc-libdir.patch
+Patch2:         lucene++-3.0.8-fix-cmake-issues.patch
+Patch3:         lucene++-3.0.8-fix-missing-headers.patch
 BuildRequires:	cmake
 BuildRequires:	boost-devel
 BuildRequires:  lzma-devel
