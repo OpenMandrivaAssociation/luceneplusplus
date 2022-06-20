@@ -76,6 +76,9 @@ This package contains the development ifles and headers for %{name}.
 %files -n %{devname}
 %doc *.license README* AUTHORS REQUESTS
 %{_includedir}/%{name}/
+%{_includedir}/cmake/liblucene++*
+%{_includedir}/pkgconfig/liblucene++-contrib.pc
+%{_includedir}/pkgconfig/liblucene++.pc
 #{_libdir}/pkgconfig/lib%{name}*.pc
 %{_libdir}/lib%{name}*.so
 
