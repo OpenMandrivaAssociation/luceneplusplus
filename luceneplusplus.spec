@@ -12,15 +12,24 @@
 
 Summary:	C++ port of the popular Java Lucene library
 Name:		lucene++
-Version:	3.0.7
-Release:	8
+Version:	3.0.8
+Release:	1
 License:	LGPLv3+ and ASL2.0
 Group:		Development/C++
 Url:		https://github.com/luceneplusplus/LucenePlusPlus
-Source0:	https://github.com/luceneplusplus/LucenePlusPlus/releases/tag/rel_%{version}.tar.gz
-Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
+Source0:	https://github.com/luceneplusplus/LucenePlusPlus/archive/rel_%{version}/LucenePlusPlus-rel_%{version}.tar.gz
+#Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
+Patch0:         lucene++-3.0.8-fix-contrib-soname.patch
+Patch1:         lucene++-3.0.8-fix-pc-libdir.patch
+Patch2:         lucene++-3.0.8-fix-cmake-issues.patch
+Patch3:         lucene++-3.0.8-fix-missing-headers.patch
 BuildRequires:	cmake
 BuildRequires:	boost-devel
+BuildRequires:  lzma-devel
+BuildRequires:  pkgconfig(zlib)
+BuildRequires:  pkgconfig(icu-uc)
+BuildRequires:  pkgconfig(libzstd)
+BuildRequires:  pkgconfig(bzip2)
 
 %description
 Lucene++ is an up to date C++ port of the popular Java Lucene library,
@@ -71,8 +80,11 @@ This package contains the development ifles and headers for %{name}.
 %files -n %{devname}
 %doc *.license README* AUTHORS REQUESTS
 %{_includedir}/%{name}/
-%{_libdir}/pkgconfig/lib%{name}*.pc
 %{_libdir}/lib%{name}*.so
+%{_libdir}/pkgconfig/liblucene++.pc
+%{_libdir}/pkgconfig/liblucene++-contrib.pc
+%{_libdir}/cmake/liblucene++/
+%{_libdir}/cmake/liblucene++-contrib/
 
 #----------------------------------------------------------------------------
 
@@ -86,8 +98,10 @@ This package contains the development ifles and headers for %{name}.
 #export CXX=g++
 #endif
 
-%cmake -DCMAKE_CXX_FLAGS="-DBOOST_VARIANT_USE_RELAXED_GET_BY_DEFAULT=1"
-%make_build
+%cmake  \
+        -DINSTALL_GTEST=OFF \
+        -DENABLE_TEST=OFF
+%make_build lucene++ lucene++-contrib
 
 %install
 %make_install -C build
