@@ -13,7 +13,7 @@
 Summary:	C++ port of the popular Java Lucene library
 Name:		lucene++
 Version:	3.0.8
-Release:	1
+Release:	2
 License:	LGPLv3+ and ASL2.0
 Group:		Development/C++
 Url:		https://github.com/luceneplusplus/LucenePlusPlus
