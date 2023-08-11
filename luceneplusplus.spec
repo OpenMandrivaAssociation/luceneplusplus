@@ -6,14 +6,16 @@
 %define oname LucenePlusPlus
 
 %define major 0
-%define libname %mklibname %{name} %{major}
-%define libcontrib %mklibname %{name}-contrib %{major}
+%define oldlibname %mklibname %{name} 0
+%define oldlibcontrib %mklibname %{name}-contrib 0
+%define libname %mklibname %{name}
+%define libcontrib %mklibname %{name}-contrib
 %define devname %mklibname %{name} -d
 
 Summary:	C++ port of the popular Java Lucene library
 Name:		lucene++
 Version:	3.0.8
-Release:	6
+Release:	7
 License:	LGPLv3+ and ASL2.0
 Group:		Development/C++
 Url:		https://github.com/luceneplusplus/LucenePlusPlus
@@ -40,6 +42,7 @@ a high-performance, full-featured text search engine.
 %package -n %{libname}
 Summary:	C++ port of the popular Java Lucene library
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 Lucene++ is an up to date C++ port of the popular Java Lucene library,
@@ -55,6 +58,7 @@ a high-performance, full-featured text search engine.
 %package -n %{libcontrib}
 Summary:	C++ port of the popular Java Lucene library
 Group:		System/Libraries
+%rename %{oldlibcontrib}
 
 %description -n %{libcontrib}
 Lucene++ is an up to date C++ port of the popular Java Lucene library,
