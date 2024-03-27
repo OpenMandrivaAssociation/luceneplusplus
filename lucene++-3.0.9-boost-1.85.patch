@@ -1,7 +1,8 @@
-diff -up LucenePlusPlus-rel_3.0.9/src/core/store/MMapDirectory.cpp.omv~ LucenePlusPlus-rel_3.0.9/src/core/store/MMapDirectory.cpp
---- LucenePlusPlus-rel_3.0.9/src/core/store/MMapDirectory.cpp.omv~	2024-03-27 11:54:53.636514923 +0100
-+++ LucenePlusPlus-rel_3.0.9/src/core/store/MMapDirectory.cpp	2024-03-27 11:54:57.057638885 +0100
-@@ -36,7 +36,7 @@ MMapIndexInput::MMapIndexInput(const Str
+diff --git a/src/core/store/MMapDirectory.cpp b/src/core/store/MMapDirectory.cpp
+index beac782..46156e3 100644
+--- a/src/core/store/MMapDirectory.cpp
++++ b/src/core/store/MMapDirectory.cpp
+@@ -36,7 +36,7 @@ MMapIndexInput::MMapIndexInput(const String& path) {
      bufferPosition = 0;
      if (!path.empty()) {
          try {
@@ -10,10 +11,22 @@ diff -up LucenePlusPlus-rel_3.0.9/src/core/store/MMapDirectory.cpp.omv~ LucenePl
          } catch (...) {
              boost::throw_exception(FileNotFoundException(path));
          }
-diff -up LucenePlusPlus-rel_3.0.9/src/core/util/FileUtils.cpp.omv~ LucenePlusPlus-rel_3.0.9/src/core/util/FileUtils.cpp
---- LucenePlusPlus-rel_3.0.9/src/core/util/FileUtils.cpp.omv~	2024-03-27 11:55:05.656948308 +0100
-+++ LucenePlusPlus-rel_3.0.9/src/core/util/FileUtils.cpp	2024-03-27 11:55:11.837168812 +0100
-@@ -128,12 +128,12 @@ String joinPath(const String& path, cons
+diff --git a/src/core/util/FileUtils.cpp b/src/core/util/FileUtils.cpp
+index 51508b5..d92efbb 100644
+--- a/src/core/util/FileUtils.cpp
++++ b/src/core/util/FileUtils.cpp
+@@ -5,9 +5,9 @@
+ /////////////////////////////////////////////////////////////////////////////
+ 
+ #include "LuceneInc.h"
+-#include <boost/filesystem/convenience.hpp>
+ #include <boost/filesystem/operations.hpp>
+ #include <boost/filesystem/path.hpp>
++#include <boost/filesystem/directory.hpp>
+ #include "LuceneThread.h"
+ #include "StringUtils.h"
+ #include "FileUtils.h"
+@@ -128,12 +128,12 @@ String joinPath(const String& path, const String& file) {
  }
  
  String extractPath(const String& path) {
@@ -28,24 +41,3 @@ diff -up LucenePlusPlus-rel_3.0.9/src/core/util/FileUtils.cpp.omv~ LucenePlusPlu
      return fileName.filename().wstring().c_str();
  }
  
-commit 3d67fc46e1672229e0a2db498b57ddb0c8ba20d7
-Author: Bernhard Rosenkränzer <bero@lindev.ch>
-Date:   Wed Mar 27 12:05:28 2024 +0100
-
-    Fix build with boost 1.85
-    
-    boost/filesystem/convenience.hpp has been removed (and was being
-    included without being used anyway).
-
-diff --git a/src/core/util/FileUtils.cpp b/src/core/util/FileUtils.cpp
-index e467364..d84ad5b 100644
---- a/src/core/util/FileUtils.cpp
-+++ b/src/core/util/FileUtils.cpp
-@@ -5,7 +5,6 @@
- /////////////////////////////////////////////////////////////////////////////
- 
- #include "LuceneInc.h"
--#include <boost/filesystem/convenience.hpp>
- #include <boost/filesystem/operations.hpp>
- #include <boost/filesystem/path.hpp>
- #include "LuceneThread.h"
