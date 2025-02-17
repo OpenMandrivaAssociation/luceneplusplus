@@ -22,6 +22,7 @@ Url:		https://github.com/luceneplusplus/LucenePlusPlus
 Source0:	https://github.com/luceneplusplus/LucenePlusPlus/archive/rel_%{version}/LucenePlusPlus-rel_%{version}.tar.gz
 Patch0:		lucene++-3.0.9-boost-1.85.patch
 #Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
+Patch2:        https://patch-diff.githubusercontent.com/raw/luceneplusplus/LucenePlusPlus/pull/210.patch
 BuildRequires:	cmake
 BuildRequires:	boost-devel
 BuildRequires:  lzma-devel
