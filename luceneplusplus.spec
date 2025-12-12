@@ -26,6 +26,7 @@ Patch2:        https://patch-diff.githubusercontent.com/raw/luceneplusplus/Lucen
 Patch3:        boost-1.89.patch
 
 BuildRequires:	cmake
+BuildRequires:	make
 BuildRequires:	boost-devel
 BuildRequires:  lzma-devel
 BuildRequires:  pkgconfig(zlib)
