@@ -24,6 +24,8 @@ Patch0:		lucene++-3.0.9-boost-1.85.patch
 #Patch1:		LucenePlusPlus-20140729-pkgconfig.patch
 Patch2:        https://patch-diff.githubusercontent.com/raw/luceneplusplus/LucenePlusPlus/pull/210.patch
 Patch3:        boost-1.89.patch
+# Boost 1.90
+Patch4:        https://patch-diff.githubusercontent.com/raw/luceneplusplus/LucenePlusPlus/pull/222.patch
 
 BuildRequires:	cmake
 BuildRequires:	make
